@@ -1163,10 +1163,12 @@
       }
 
       const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
-      });
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      body: JSON.stringify(body)
+});
+
+
 
       if (!response.ok) throw new Error("Webhook returned " + response.status);
       return { sent: true, body };
